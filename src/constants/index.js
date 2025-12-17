@@ -1,19 +1,23 @@
 const navLinks = [
-  {
-    name: "Work",
-    link: "#work",
+    {
+    name: "About",      
+    link: "#about",
   },
   {
-    name: "Experience",
-    link: "#experience",
+    name: "Projects",
+    link: "#projects",
+  },
+  {
+    name: "Education",
+    link: "#education",
+  },
+  {
+    name: "Certifications",
+    link: "#certifications",
   },
   {
     name: "Skills",
     link: "#skills",
-  },
-  {
-    name: "Testimonials",
-    link: "#testimonials",
   },
 ];
 
@@ -263,6 +267,46 @@ const socialImgs = [
   },
 ];
 
+// Update the certifications object in constants/index.js
+const certifications = [
+  {
+    title: "Microsoft Azure AI Fundamentals (AI-900)",
+    organization: "Microsoft",
+    date: "June 2025",
+    img: "/cert/microsoft-azure-ai-fundamentals.png",
+    link: "https://www.credly.com/badges/9b9881cb-8233-4566-887e-a0bb15a867f3/linked_in_profile",
+    skills: ["AI/ML", "Cloud", "Azure Bot Services", "Azure Machine Learning", "Cognitive Services"],
+    verified: true
+  },
+  {
+    title: "Generative AI for Everyone",
+    organization: "DeepLearning.AI",
+    date: "July 2024",
+    img: "/cert/generative-ai-for-everyone.png",
+    link: "https://www.coursera.org/account/accomplishments/verify/54W4SBZBBUML",
+    skills: ["LLM", "Prompt Engineering", "Social Impact", "Automation", "Responsible AI", "Generative AI"], 
+    verified: true
+  },
+  {
+    title: "AI for Everyone",
+    organization: "DeepLearning.AI",
+    date: "February 2024",
+    img: "/cert/ai-for-everyone.png",
+    link: "https://www.coursera.org/account/accomplishments/verify/UMEH3RYQS7CS",
+    skills: ["Deep Learning", "Artificial Neural Networks", "Strategic Thinking", "Responsible AI","Data Science"],
+    verified: true
+  },
+  {
+    title: "Cybersecurity Tools & Cyberattacks",
+    organization: "IBM",
+    date: "July 2023",
+    img: "/cert/cybersecurity-tools-cyberattacks.png",
+    link: "https://www.coursera.org/account/accomplishments/verify/T22NM6T2DSNZ",
+    skills: ["Malware Protection", "Cyber Attacks", "Network Security", "Human Factors (Security)", "Threat Detection"],
+    verified: true
+  }
+];
+
 export {
   words,
   abilities,
@@ -275,4 +319,5 @@ export {
   techStackIcons,
   techStackImgs,
   navLinks,
+  certifications
 };
