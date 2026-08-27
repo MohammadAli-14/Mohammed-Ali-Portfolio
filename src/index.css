@@ -7,26 +7,40 @@
 
 html,
 body {
-  width: 100dvw;
+  width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
   background-color: black;
   color: white;
   scroll-behavior: smooth;
   font-family: "Mona Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 section {
-  width: 100dvw;
+  width: 100%;
+  max-width: 100vw;
 }
 
 @theme {
   --font-sans: "Mona Sans", sans-serif;
-  --color-white-50: #d9ecff;
-  --color-black-50: #1c1c21;
-  --color-black-100: #0e0e10;
-  --color-black-200: #282732;
-  --color-blue-50: #839cb5;
-  --color-blue-100: #2d2d38;
+  --color-white: #ffffff;
+  --color-white-50: #f4f4f5;
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
+  --color-black-50: #18181b;
+  --color-black-100: #09090b;
+  --color-black-200: #121215;
 }
 
 @layer utilities {
@@ -36,6 +50,20 @@ section {
   
   .flex-col-center {
     @apply flex flex-col justify-center items-center;
+  }
+  
+  /* GPU Hardware Acceleration Utilities */
+  .gpu-accelerated {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
   }
   
   /* Animation utilities */
@@ -96,7 +124,7 @@ section {
 
 /* Card styles */
 .card-border {
-  @apply border border-black-50 bg-black-100;
+  @apply border border-white/10 bg-[#09090b]/80 backdrop-blur-md;
 }
 
 /* Hero section */
@@ -105,19 +133,11 @@ section {
 }
 
 .hero-text {
-  @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
-}
-
-.hero-text img {
-  @apply size-8 md:size-10 object-contain;
-}
-
-.hero-text .slide {
-  @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
+  @apply flex flex-col justify-center font-semibold relative z-20;
 }
 
 .hero-badge {
-  @apply bg-black-200 py-2 px-4 rounded-full w-fit text-sm md:text-base text-nowrap;
+  @apply bg-zinc-900/60 border border-white/10 py-2 px-4 rounded-full w-fit text-sm md:text-base text-zinc-300 text-nowrap backdrop-blur-md;
 }
 
 .hero-3d-layout {
@@ -130,27 +150,27 @@ section {
 }
 
 .cta-button {
-  @apply px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden;
+  @apply px-5 py-4 rounded-xl bg-white text-black font-semibold flex justify-center items-center relative cursor-pointer overflow-hidden shadow-md transition-all duration-300 active:scale-95 hover:bg-zinc-200;
 }
 
 .cta-button .bg-circle {
   @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2 
     w-[120%] h-[120%] group-hover:size-10 group-hover:right-10
-    rounded-full bg-white-50 transition-all duration-500;
+    rounded-full bg-zinc-200 transition-all duration-500;
 }
 
 .cta-button .text {
-  @apply uppercase md:text-lg text-black transition-all duration-500
-    group-hover:text-white-50 group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
+  @apply uppercase md:text-lg text-black font-bold tracking-wide transition-all duration-500
+    group-hover:text-black group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
 }
 
 .cta-button .arrow-wrapper {
-  @apply group-hover:bg-white-50 size-10 rounded-full absolute right-10 top-1/2 
-    -translate-y-1/2 flex justify-center items-center overflow-hidden;
+  @apply group-hover:bg-zinc-900 size-10 rounded-full absolute right-10 top-1/2 
+    -translate-y-1/2 flex justify-center items-center overflow-hidden transition-all duration-300;
 }
 
 .cta-button .arrow-wrapper img {
-  @apply size-5 xl:-translate-y-32 translate-y-0 animate-bounce group-hover:translate-y-0 transition-all duration-500;
+  @apply size-5 xl:-translate-y-32 translate-y-0 animate-bounce group-hover:translate-y-0 transition-all duration-500 filter invert;
 }
 
 /* Timeline */
@@ -202,7 +222,7 @@ form label {
 
 form input,
 form textarea {
-  @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-blue-50 bg-blue-100 rounded-md;
+  @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-zinc-500 bg-zinc-900 border border-zinc-800 text-white rounded-md;
 }
 
 form a {
@@ -238,44 +258,11 @@ form a img {
   @apply inline-block;
 }
 
-/* Hero text slider */
-.slide {
-  display: inline-block;
-  flex-direction: column;
-  transition: all cubic-bezier(0.71, 0.03, 0.34, 1);
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  animation: wordSlider 21s infinite cubic-bezier(0.9, 0.01, 0.3, 0.99);
-}
-
-@keyframes wordSlider {
-  0% {
-    transform: translateY(0.5%);
-  }
-  12.5% {
-    transform: translateY(-12.5%);
-  }
-  25% {
-    transform: translateY(-25%);
-  }
-  37.5% {
-    transform: translateY(-37.5%);
-  }
-  50% {
-    transform: translateY(-50%);
-  }
-  62.5% {
-    transform: translateY(-62.5%);
-  }
-  75% {
-    transform: translateY(-75%);
-  }
-  87.5% {
-    transform: translateY(-87.5%);
-  }
+/* Word rotator slide container */
+.word-rotator-container {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
 }
 
 /* Gradient lines */
@@ -310,33 +297,20 @@ form a img {
   );
 }
 
-/* Marquee */
+/* Marquee - GPU accelerated */
 .marquee {
-  width: 100dvw;
+  width: 100%;
+  max-width: 100vw;
   overflow: hidden;
   position: relative;
 }
 
-.marquee-box {
-  display: flex;
-  align-items: center;
-  width: 200%;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-  animation: marquee 60s linear infinite;
-}
-
-.marquee-item {
-  float: left;
-}
-
-@keyframes marquee {
+@keyframes marqueeGPU {
   0% {
-    left: 0;
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    left: -100%;
+    transform: translate3d(-33.333%, 0, 0);
   }
 }
 

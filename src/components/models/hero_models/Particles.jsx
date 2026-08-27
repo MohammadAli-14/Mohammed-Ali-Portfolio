@@ -1,40 +1,36 @@
 import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 
-const Particles = ({ count = 200 }) => {
+const Particles = ({ count = 80 }) => {
   const mesh = useRef();
 
-  const particles = useMemo(() => {
+  const { particles, positions } = useMemo(() => {
     const temp = [];
+    const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
+      const x = (Math.random() - 0.5) * 10;
+      const y = Math.random() * 10 + 5;
+      const z = (Math.random() - 0.5) * 10;
       temp.push({
-        position: [
-          (Math.random() - 0.5) * 10,
-          Math.random() * 10 + 5, // higher starting point
-          (Math.random() - 0.5) * 10,
-        ],
-        speed: 0.005 + Math.random() * 0.001,
+        speed: 0.005 + Math.random() * 0.002,
       });
+      pos[i * 3] = x;
+      pos[i * 3 + 1] = y;
+      pos[i * 3 + 2] = z;
     }
-    return temp;
+    return { particles: temp, positions: pos };
   }, [count]);
 
   useFrame(() => {
-    const positions = mesh.current.geometry.attributes.position.array;
+    if (!mesh.current || !mesh.current.geometry) return;
+    const posArr = mesh.current.geometry.attributes.position.array;
     for (let i = 0; i < count; i++) {
-      let y = positions[i * 3 + 1];
+      let y = posArr[i * 3 + 1];
       y -= particles[i].speed;
       if (y < -2) y = Math.random() * 10 + 5;
-      positions[i * 3 + 1] = y;
+      posArr[i * 3 + 1] = y;
     }
     mesh.current.geometry.attributes.position.needsUpdate = true;
-  });
-
-  const positions = new Float32Array(count * 3);
-  particles.forEach((p, i) => {
-    positions[i * 3] = p.position[0];
-    positions[i * 3 + 1] = p.position[1];
-    positions[i * 3 + 2] = p.position[2];
   });
 
   return (
@@ -49,9 +45,9 @@ const Particles = ({ count = 200 }) => {
       </bufferGeometry>
       <pointsMaterial
         color="#ffffff"
-        size={0.05}
+        size={0.04}
         transparent
-        opacity={0.9}
+        opacity={0.8}
         depthWrite={false}
       />
     </points>

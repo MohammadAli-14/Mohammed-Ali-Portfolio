@@ -93,71 +93,70 @@ const Certifications = () => {
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="bg-black-100 border border-black-50 rounded-lg md:rounded-xl p-4 md:p-5 lg:p-6"
-                // Removed hover effects for better performance
+                className="bg-[#09090b]/80 border border-white/10 rounded-2xl p-5 md:p-6 hover:border-white/25 hover:shadow-[0_16px_40px_rgba(0,0,0,0.9)] transition-all duration-300 backdrop-blur-sm"
               >
-                <div className="flex flex-col sm:flex-row items-start gap-3 md:gap-4">
-                  {/* Icon - Simplified */}
+                <div className="flex flex-col sm:flex-row items-start gap-4">
+                  {/* Icon */}
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-                      <span className="text-white text-lg">📜</span>
+                    <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center shadow-sm">
+                      <span className="text-zinc-200 text-xl">📜</span>
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-1 min-w-0 w-full">
-                    {/* Title - Fixed for small screens */}
-                    <h3 className="text-base md:text-lg lg:text-xl font-semibold text-white mb-1 md:mb-2 line-clamp-2 leading-tight">
+                    {/* Title */}
+                    <h3 className="text-base md:text-lg lg:text-xl font-semibold text-white mb-1.5 line-clamp-2 leading-tight">
                       {cert.title}
                     </h3>
                     
-                    {/* Organization and Date - Stack on mobile */}
-                    <div className="flex flex-col xs:flex-row xs:items-center gap-1 md:gap-2 mb-2 md:mb-3">
-                      <span className="text-white/70 text-xs md:text-sm">
+                    {/* Organization and Date */}
+                    <div className="flex flex-col xs:flex-row xs:items-center gap-1 md:gap-2 mb-3">
+                      <span className="text-zinc-300 text-xs md:text-sm font-medium">
                         {cert.organization}
                       </span>
-                      <span className="hidden xs:inline text-white/40">•</span>
-                      <span className="text-white/70 text-xs md:text-sm">
+                      <span className="hidden xs:inline text-zinc-600">•</span>
+                      <span className="text-zinc-500 text-xs md:text-sm">
                         {cert.date}
                       </span>
                     </div>
 
-                    {/* Skills - Improved for mobile */}
-                    <div className="flex flex-wrap gap-1 md:gap-2 mb-3 md:mb-4">
+                    {/* Skills */}
+                    <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4">
                       {cert.skills.slice(0, 3).map((skill, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-1 bg-black-50 text-white/80 text-xs rounded-full"
+                          className="px-2.5 py-1 bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs rounded-full font-mono font-medium"
                         >
                           {skill}
                         </span>
                       ))}
                       {cert.skills.length > 3 && (
-                        <span className="px-2 py-1 bg-black-50 text-white/80 text-xs rounded-full">
+                        <span className="px-2.5 py-1 bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs rounded-full font-mono font-medium">
                           +{cert.skills.length - 3}
                         </span>
                       )}
                     </div>
 
-                    {/* Action Buttons - Stack on mobile */}
-                    <div className="flex flex-col xs:flex-row gap-2 md:gap-3 pt-3 md:pt-4 border-t border-black-50">
+                    {/* Action Buttons */}
+                    <div className="flex flex-col xs:flex-row gap-2.5 md:gap-3 pt-3.5 border-t border-white/10">
                       <button
                         onClick={() => openModal(cert)}
-                        className="w-full xs:flex-1 py-2 md:py-3 bg-white text-black text-center rounded-lg font-medium hover:bg-white/90 active:bg-white/80 transition-colors duration-150 cursor-pointer flex items-center justify-center gap-2 text-sm md:text-base"
+                        className="w-full xs:flex-1 py-2.5 md:py-3 bg-white hover:bg-zinc-200 text-black text-center rounded-xl font-semibold shadow-sm active:scale-95 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 text-xs sm:text-sm"
                         aria-label={`View ${cert.title} certificate`}
                       >
                         <span>👁️</span>
-                        View Certificate
+                        <span>View Certificate</span>
                       </button>
                       <a
                         href={cert.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full xs:flex-1 py-2 md:py-3 bg-black-50 text-white text-center rounded-lg font-medium hover:bg-black-200 active:bg-black-300 transition-colors duration-150 flex items-center justify-center gap-2 text-sm md:text-base cursor-pointer"
+                        className="w-full xs:flex-1 py-2.5 md:py-3 bg-zinc-900 border border-zinc-700/80 text-zinc-200 text-center rounded-xl font-medium hover:bg-zinc-800 hover:border-zinc-500 transition-all duration-200 flex items-center justify-center gap-2 text-xs sm:text-sm cursor-pointer"
                         aria-label={`Verify ${cert.title} online`}
                       >
                         <span>🔗</span>
-                        Verify Online
+                        <span>Verify Online</span>
                       </a>
                     </div>
                   </div>
@@ -167,25 +166,25 @@ const Certifications = () => {
           </div>
         </div>
 
-        {/* Stats Section - Stack on mobile */}
-        <div className="mt-8 md:mt-10 grid grid-cols-1 xs:grid-cols-3 gap-3 md:gap-4 lg:gap-6">
-          <div className="bg-black/40 border border-white/10 rounded-lg md:rounded-xl p-4 md:p-5 text-center">
+        {/* Stats Section */}
+        <div className="mt-8 md:mt-12 grid grid-cols-1 xs:grid-cols-3 gap-3 md:gap-4 lg:gap-6">
+          <div className="bg-[#09090b]/80 border border-white/10 rounded-2xl p-5 text-center shadow-sm">
             <div className="text-2xl md:text-3xl font-bold text-white mb-1">
               {stats.total}
             </div>
-            <div className="text-white/60 text-sm md:text-base">Certificates</div>
+            <div className="text-zinc-400 text-xs sm:text-sm font-medium">Certificates</div>
           </div>
-          <div className="bg-black/40 border border-white/10 rounded-lg md:rounded-xl p-4 md:p-5 text-center">
+          <div className="bg-[#09090b]/80 border border-white/10 rounded-2xl p-5 text-center shadow-sm">
             <div className="text-2xl md:text-3xl font-bold text-white mb-1">
               {stats.platforms}
             </div>
-            <div className="text-white/60 text-sm md:text-base">Platforms</div>
+            <div className="text-zinc-400 text-xs sm:text-sm font-medium">Platforms</div>
           </div>
-          <div className="bg-black/40 border border-white/10 rounded-lg md:rounded-xl p-4 md:p-5 text-center">
+          <div className="bg-[#09090b]/80 border border-white/10 rounded-2xl p-5 text-center shadow-sm">
             <div className="text-2xl md:text-3xl font-bold text-white mb-1">
               100%
             </div>
-            <div className="text-white/60 text-sm md:text-base">Verified</div>
+            <div className="text-zinc-400 text-xs sm:text-sm font-medium">Verified</div>
           </div>
         </div>
 

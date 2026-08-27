@@ -6,28 +6,28 @@ const LoaderModal = () => {
         animation: 'fadeIn 0.1s ease-out',
       }}
     >
-      <div className="relative bg-black/80 border border-white/20 rounded-xl p-4 sm:p-6 shadow-2xl max-w-sm w-full mx-4">
-        {/* Simple spinner without heavy animations */}
+      <div className="relative bg-zinc-950/90 border border-white/15 rounded-2xl p-6 shadow-2xl max-w-sm w-full mx-4 backdrop-blur-md">
+        {/* Simple spinner */}
         <div className="flex justify-center mb-4">
-          <div className="relative w-16 h-16">
-            <div className="absolute inset-0 border-4 border-white/10 rounded-full"></div>
-            <div className="absolute inset-0 border-4 border-transparent border-t-blue-500 rounded-full animate-spin"></div>
+          <div className="relative w-14 h-14">
+            <div className="absolute inset-0 border-3 border-white/10 rounded-full"></div>
+            <div className="absolute inset-0 border-3 border-transparent border-t-white rounded-full animate-spin"></div>
           </div>
         </div>
         
         {/* Loading text */}
         <div className="text-center space-y-3">
-          <p className="text-white text-lg font-bold mb-2">
+          <p className="text-white text-base font-semibold mb-2">
             Loading Certificate
           </p>
           
-          {/* Simple progress indicator */}
+          {/* Progress indicator */}
           <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-            <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 animate-progress"></div>
+            <div className="h-full bg-white animate-progress"></div>
           </div>
           
-          {/* Simple hint text */}
-          <p className="text-white/60 text-xs sm:text-sm mt-2">
+          {/* Hint text */}
+          <p className="text-zinc-500 text-xs mt-2 font-mono">
             Preparing certificate...
           </p>
         </div>

@@ -31,7 +31,7 @@ const NavBar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -75,7 +75,9 @@ const NavBar = () => {
     <>
       <header 
         className={`navbar fixed w-full left-0 top-0 z-50 transition-all duration-300 ${
-          scrolled || isMenuOpen ? "bg-black/90 backdrop-blur-sm border-b border-gray-800/30" : "bg-transparent"
+          scrolled || isMenuOpen
+            ? "bg-black/85 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/60"
+            : "bg-transparent"
         }`}
       >
         <div className="inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -89,7 +91,7 @@ const NavBar = () => {
                 handleLinkClick('#hero');
               }}
             >
-              <span className="text-gray-200 hover:text-white transition-colors duration-300">
+              <span className="text-white hover:text-zinc-300 transition-colors duration-300">
                 Mohammed Ali
               </span>
             </a>
@@ -109,15 +111,15 @@ const NavBar = () => {
                           e.preventDefault();
                           handleLinkClick(link);
                         }}
-                        className={`px-2 py-1 text-sm font-medium transition-colors duration-300 ${
+                        className={`px-2 py-1 text-sm font-medium transition-colors duration-200 ${
                           isActive 
-                            ? 'text-gray-100' 
-                            : 'text-gray-400 hover:text-gray-200'
+                            ? 'text-white font-semibold' 
+                            : 'text-zinc-400 hover:text-white'
                         }`}
                       >
                         {name}
                         {isActive && (
-                          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-300/80 rounded-full"></span>
+                          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
                         )}
                       </a>
                     </li>
@@ -134,29 +136,28 @@ const NavBar = () => {
                   e.preventDefault();
                   handleLinkClick('#contact');
                 }}
-                className="contact-btn group px-6 py-2.5 bg-gray-200 text-gray-900 font-medium rounded-lg hover:bg-gray-300 active:scale-95 transition-all duration-300"
+                className="group px-5 py-2.5 bg-white hover:bg-zinc-200 text-black text-sm font-semibold rounded-xl shadow-sm active:scale-95 transition-all duration-200 flex items-center gap-2 cursor-pointer"
               >
-                <span className="group-hover:scale-105 transition-transform duration-300">
-                  Contact me
-                </span>
+                <span>Contact me</span>
+                <span className="group-hover:translate-x-0.5 transition-transform duration-200">→</span>
               </a>
             </div>
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden flex items-center justify-center w-10 h-10 relative z-50"
+              className="lg:hidden flex items-center justify-center w-10 h-10 relative z-50 text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
               <div className="relative w-6 h-5">
-                <span className={`absolute left-0 w-full h-0.5 bg-gray-300 transform transition-all duration-300 ${
+                <span className={`absolute left-0 w-full h-0.5 bg-white transform transition-all duration-300 ${
                   isMenuOpen ? 'top-2 rotate-45' : 'top-0'
                 }`} />
-                <span className={`absolute left-0 top-2 w-full h-0.5 bg-gray-300 transform transition-all duration-300 ${
+                <span className={`absolute left-0 top-2 w-full h-0.5 bg-white transform transition-all duration-300 ${
                   isMenuOpen ? 'opacity-0' : 'opacity-100'
                 }`} />
-                <span className={`absolute left-0 w-full h-0.5 bg-gray-300 transform transition-all duration-300 ${
+                <span className={`absolute left-0 w-full h-0.5 bg-white transform transition-all duration-300 ${
                   isMenuOpen ? 'top-2 -rotate-45' : 'top-4'
                 }`} />
               </div>
@@ -166,7 +167,7 @@ const NavBar = () => {
 
         {/* Mobile Menu Overlay */}
         <div 
-          className={`lg:hidden fixed inset-0 z-40 bg-black/90 backdrop-blur-sm transition-all duration-300 ${
+          className={`lg:hidden fixed inset-0 z-40 bg-black/95 backdrop-blur-md transition-all duration-300 ${
             isMenuOpen 
               ? 'opacity-100 visible' 
               : 'opacity-0 invisible pointer-events-none'
@@ -174,7 +175,7 @@ const NavBar = () => {
           onClick={() => setIsMenuOpen(false)}
         >
           <div 
-            className={`absolute top-20 right-0 left-0 bg-black/90 border-t border-gray-800/30 transition-all duration-300 ${
+            className={`absolute top-20 right-0 left-0 bg-[#09090b] border-t border-white/10 transition-all duration-300 ${
               isMenuOpen 
                 ? 'translate-y-0 opacity-100' 
                 : '-translate-y-4 opacity-0'
@@ -194,15 +195,15 @@ const NavBar = () => {
                       e.preventDefault();
                       handleLinkClick(link);
                     }}
-                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
+                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
                       isActive
-                        ? 'bg-gray-800/40 text-gray-100'
-                        : 'text-gray-400 hover:bg-gray-800/30 hover:text-gray-200'
+                        ? 'bg-zinc-900 text-white border border-white/15'
+                        : 'text-zinc-400 hover:bg-zinc-900/50 hover:text-white'
                     }`}
                   >
                     {name}
                     {isActive && (
-                      <span className="inline-block ml-2 w-2 h-2 bg-gray-300 rounded-full animate-pulse"></span>
+                      <span className="inline-block ml-2 w-2 h-2 bg-white rounded-full animate-pulse"></span>
                     )}
                   </a>
                 );
@@ -215,7 +216,7 @@ const NavBar = () => {
                   e.preventDefault();
                   handleLinkClick('#contact');
                 }}
-                className="block mt-6 px-4 py-3 bg-gray-200 text-gray-900 font-medium rounded-lg hover:bg-gray-300 active:scale-95 transition-all duration-300 text-center"
+                className="block mt-6 px-4 py-3 bg-white text-black font-semibold rounded-xl shadow-md text-center hover:bg-zinc-200 active:scale-95 transition-all"
               >
                 Contact me
               </a>

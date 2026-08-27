@@ -107,35 +107,35 @@ const About = () => {
               </div>
 
               {/* What Drives Me Section */}
-              <div className="space-y-8 pt-10 border-t border-gray-800/50">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-100">
+              <div className="space-y-8 pt-10 border-t border-white/10">
+                <h3 className="text-2xl md:text-3xl font-bold text-white">
                   What Drives Me
                 </h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4 group cursor-default">
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-3 h-3 bg-gray-500 rounded-full group-hover:bg-gray-400 transition-colors duration-300"></div>
+                    <div className="flex-shrink-0 mt-1.5">
+                      <div className="w-2.5 h-2.5 bg-white rounded-full group-hover:shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-200"></div>
                     </div>
-                    <p className="text-gray-300 text-lg leading-relaxed font-light group-hover:text-gray-200 transition-colors duration-300">
+                    <p className="text-zinc-300 text-lg leading-relaxed font-light group-hover:text-white transition-colors duration-200">
                       Building efficient AI systems that deliver tangible value
                     </p>
                   </div>
                   
                   <div className="flex items-start gap-4 group cursor-default">
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-3 h-3 bg-gray-500 rounded-full group-hover:bg-gray-400 transition-colors duration-300"></div>
+                    <div className="flex-shrink-0 mt-1.5">
+                      <div className="w-2.5 h-2.5 bg-white rounded-full group-hover:shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-200"></div>
                     </div>
-                    <p className="text-gray-300 text-lg leading-relaxed font-light group-hover:text-gray-200 transition-colors duration-300">
+                    <p className="text-zinc-300 text-lg leading-relaxed font-light group-hover:text-white transition-colors duration-200">
                       Creating clean, maintainable code that scales
                     </p>
                   </div>
                   
                   <div className="flex items-start gap-4 group cursor-default">
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-3 h-3 bg-gray-500 rounded-full group-hover:bg-gray-400 transition-colors duration-300"></div>
+                    <div className="flex-shrink-0 mt-1.5">
+                      <div className="w-2.5 h-2.5 bg-white rounded-full group-hover:shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-200"></div>
                     </div>
-                    <p className="text-gray-300 text-lg leading-relaxed font-light group-hover:text-gray-200 transition-colors duration-300">
+                    <p className="text-zinc-300 text-lg leading-relaxed font-light group-hover:text-white transition-colors duration-200">
                       Continuous learning and adapting to new technologies
                     </p>
                   </div>
@@ -143,17 +143,17 @@ const About = () => {
               </div>
 
               {/* Education Note */}
-              <div className="mt-10 p-6 bg-black-100 rounded-xl border border-gray-800/50 backdrop-blur-sm">
+              <div className="mt-10 p-6 bg-[#09090b]/80 rounded-2xl border border-white/10 backdrop-blur-sm">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 mt-0.5">
-                    <div className="w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-7 h-7 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
                       </svg>
                     </div>
                   </div>
                   <div>
-                    <p className="text-gray-300 leading-relaxed font-light">
+                    <p className="text-zinc-300 leading-relaxed font-light">
                       Holder of a BSc in Computer Science with a focus on Artificial Intelligence and Machine Learning. Currently expanding expertise in generative AI and computer vision applications.
                     </p>
                   </div>
