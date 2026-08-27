@@ -267,15 +267,51 @@ const socialImgs = [
   },
 ];
 
-// Update the certifications object in constants/index.js
+// Certifications data with high-resolution certificates and official verification links
 const certifications = [
   {
-    title: "Microsoft Azure AI Fundamentals (AI-900)",
+    title: "Microsoft Certified: DevOps Engineer Expert (AZ-400)",
+    organization: "Microsoft",
+    date: "May 2026",
+    img: "/cert/azure-devops-engineer-expert-az-400.png",
+    link: "https://learn.microsoft.com/api/credentials/share/en-gb/MohammedAli-4949/914D9EF2B81DF389?sharingId=5ED4B6933854D96E",
+    skills: ["DevOps", "CI/CD Pipelines", "Azure DevOps", "Docker & Containers", "IaC", "Release Automation"],
+    verified: true
+  },
+  {
+    title: "Microsoft Certified: Azure Administrator Associate (AZ-104)",
+    organization: "Microsoft",
+    date: "May 2026",
+    img: "/cert/azure-administrator-associate-az-104.png",
+    link: "https://learn.microsoft.com/api/credentials/share/en-gb/MohammedAli-4949/C994264191E315CC?sharingId=5ED4B6933854D96E",
+    skills: ["Azure Admin", "Virtual Networks", "Entra ID", "Compute & Storage", "Cloud Governance", "Security"],
+    verified: true
+  },
+  {
+    title: "Generative AI Application Developer (Top Performer)",
+    organization: "UETIANS Foundation & PakAngels",
+    date: "March 2026",
+    img: "/cert/generative-ai-application-developer.png",
+    link: "https://quiz.ideagist.com/ideagist-certificate?cert_hash=7028af9d2327bcd5",
+    skills: ["Generative AI", "RAG Pipelines", "LLMs", "Agentic Systems", "Prompt Engineering", "LangChain"],
+    verified: true
+  },
+  {
+    title: "Microsoft Certified: Azure AI Fundamentals (AI-900)",
     organization: "Microsoft",
     date: "June 2025",
     img: "/cert/microsoft-azure-ai-fundamentals.png",
-    link: "https://www.credly.com/badges/9b9881cb-8233-4566-887e-a0bb15a867f3/linked_in_profile",
-    skills: ["AI/ML", "Cloud", "Azure Bot Services", "Azure Machine Learning", "Cognitive Services"],
+    link: "https://www.credly.com/badges/9b9881cb-8233-4566-887e-a0bb15a867f3",
+    skills: ["Azure AI", "Computer Vision", "Cognitive Services", "Azure Machine Learning", "NLP"],
+    verified: true
+  },
+  {
+    title: "Microsoft Certified: Azure Fundamentals (AZ-900)",
+    organization: "Microsoft",
+    date: "January 2026",
+    img: "/cert/azure-fundamentals-az-900.png",
+    link: "https://www.credly.com/badges/5768ddc8-786d-41ad-8f37-1c922113e9cf",
+    skills: ["Cloud Architecture", "Azure Services", "Security & Compliance", "Cloud Management"],
     verified: true
   },
   {
@@ -284,7 +320,7 @@ const certifications = [
     date: "July 2024",
     img: "/cert/generative-ai-for-everyone.png",
     link: "https://www.coursera.org/account/accomplishments/verify/54W4SBZBBUML",
-    skills: ["LLM", "Prompt Engineering", "Social Impact", "Automation", "Responsible AI", "Generative AI"], 
+    skills: ["LLMs", "Prompt Engineering", "Responsible AI", "AI Strategy", "Automation"],
     verified: true
   },
   {
@@ -293,16 +329,7 @@ const certifications = [
     date: "February 2024",
     img: "/cert/ai-for-everyone.png",
     link: "https://www.coursera.org/account/accomplishments/verify/UMEH3RYQS7CS",
-    skills: ["Deep Learning", "Artificial Neural Networks", "Strategic Thinking", "Responsible AI","Data Science"],
-    verified: true
-  },
-  {
-    title: "Cybersecurity Tools & Cyberattacks",
-    organization: "IBM",
-    date: "July 2023",
-    img: "/cert/cybersecurity-tools-cyberattacks.png",
-    link: "https://www.coursera.org/account/accomplishments/verify/T22NM6T2DSNZ",
-    skills: ["Malware Protection", "Cyber Attacks", "Network Security", "Human Factors (Security)", "Threat Detection"],
+    skills: ["Machine Learning", "Neural Networks", "Data Strategy", "Responsible AI"],
     verified: true
   }
 ];

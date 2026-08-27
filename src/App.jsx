@@ -13,10 +13,17 @@ const Contact = React.lazy(() => import("./sections/Contact"));
 
 const App = () => {
   useEffect(() => {
-    // Preload certificate image for instant modal viewing
+    // Preload top certificate images for instant modal viewing
     const timer = setTimeout(() => {
-      const img = new Image();
-      img.src = "/cert/microsoft-azure-ai-fundamentals.png";
+      const preloadImgs = [
+        "/cert/azure-devops-engineer-expert-az-400.png",
+        "/cert/azure-administrator-associate-az-104.png",
+        "/cert/generative-ai-application-developer.png",
+      ];
+      preloadImgs.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
     }, 1000);
 
     return () => clearTimeout(timer);
