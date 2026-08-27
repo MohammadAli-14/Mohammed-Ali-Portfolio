@@ -108,9 +108,10 @@ const Hero = () => {
           {/* Quick Tech Highlights */}
           <div className="mt-10 pt-6 border-t border-white/10 flex items-center flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-zinc-400">
             <span className="font-semibold text-zinc-200">Specialties:</span>
-            <span className="px-3 py-1 rounded-full bg-zinc-900/70 border border-zinc-800 text-zinc-300 font-mono font-medium">PyTorch & YOLO</span>
-            <span className="px-3 py-1 rounded-full bg-zinc-900/70 border border-zinc-800 text-zinc-300 font-mono font-medium">React 19 & Three.js</span>
-            <span className="px-3 py-1 rounded-full bg-zinc-900/70 border border-zinc-800 text-zinc-300 font-mono font-medium">Azure AI (AI-900)</span>
+            <span className="px-3 py-1 rounded-full bg-zinc-900/70 border border-zinc-800 text-zinc-300 font-mono font-medium">Agentic AI & RAG</span>
+            <span className="px-3 py-1 rounded-full bg-zinc-900/70 border border-zinc-800 text-zinc-300 font-mono font-medium">PyTorch & YOLOv11</span>
+            <span className="px-3 py-1 rounded-full bg-zinc-900/70 border border-zinc-800 text-zinc-300 font-mono font-medium">Azure DevOps Expert (AZ-400)</span>
+            <span className="px-3 py-1 rounded-full bg-zinc-900/70 border border-zinc-800 text-zinc-300 font-mono font-medium">React 19 & Full-Stack</span>
           </div>
         </div>
 

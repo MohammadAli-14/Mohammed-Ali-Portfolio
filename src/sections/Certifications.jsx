@@ -7,8 +7,16 @@ import { certifications } from "../constants/index.js";
 const Certifications = () => {
   const [selectedCert, setSelectedCert] = useState(null);
   const [showLoader, setShowLoader] = useState(false);
+  const [expandedSkills, setExpandedSkills] = useState({});
   const loaderTimeoutRef = useRef(null);
   const imageCache = useRef({});
+
+  const toggleSkills = useCallback((index) => {
+    setExpandedSkills((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  }, []);
 
   // Optimized open modal function - no heavy animations
   const openModal = useCallback((cert) => {
@@ -123,18 +131,24 @@ const Certifications = () => {
 
                     {/* Skills */}
                     <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4">
-                      {cert.skills.slice(0, 3).map((skill, idx) => (
+                      {(expandedSkills[index] ? cert.skills : cert.skills.slice(0, 3)).map((skill, idx) => (
                         <span
                           key={idx}
-                          className="px-2.5 py-1 bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs rounded-full font-mono font-medium"
+                          className="px-2.5 py-1 bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs rounded-full font-mono font-medium transition-all duration-200"
                         >
                           {skill}
                         </span>
                       ))}
                       {cert.skills.length > 3 && (
-                        <span className="px-2.5 py-1 bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs rounded-full font-mono font-medium">
-                          +{cert.skills.length - 3}
-                        </span>
+                        <button
+                          type="button"
+                          onClick={() => toggleSkills(index)}
+                          className="px-2.5 py-1 bg-zinc-800/90 hover:bg-zinc-700 border border-zinc-700 text-zinc-200 hover:text-white text-xs rounded-full font-mono font-medium transition-all duration-200 active:scale-95 cursor-pointer shadow-sm"
+                          aria-label={expandedSkills[index] ? "Show fewer skills" : `Show ${cert.skills.length - 3} more skills`}
+                          title={expandedSkills[index] ? "Collapse skills" : "Click to view all skills"}
+                        >
+                          {expandedSkills[index] ? "− less" : `+${cert.skills.length - 3}`}
+                        </button>
                       )}
                     </div>
 

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -41,6 +42,15 @@ const PROJECTS = [
 ];
 
 const Projects = () => {
+  const [expandedTech, setExpandedTech] = useState({});
+
+  const toggleTech = (index) => {
+    setExpandedTech((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
   useGSAP(() => {
     // Only run animations on non-mobile devices
     if (window.innerWidth > 768) {
@@ -104,18 +114,24 @@ const Projects = () => {
                   
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
-                    {project.tech.slice(0, 4).map((tech, techIndex) => (
+                    {(expandedTech[index] ? project.tech : project.tech.slice(0, 4)).map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2.5 py-1 bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs rounded-full font-mono font-medium"
+                        className="px-2.5 py-1 bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs rounded-full font-mono font-medium transition-all duration-200"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.tech.length > 4 && (
-                      <span className="px-2.5 py-1 bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs rounded-full font-mono font-medium">
-                        +{project.tech.length - 4}
-                      </span>
+                      <button
+                        type="button"
+                        onClick={() => toggleTech(index)}
+                        className="px-2.5 py-1 bg-zinc-800/90 hover:bg-zinc-700 border border-zinc-700 text-zinc-200 hover:text-white text-xs rounded-full font-mono font-medium transition-all duration-200 active:scale-95 cursor-pointer shadow-sm"
+                        aria-label={expandedTech[index] ? "Show fewer technologies" : `Show ${project.tech.length - 4} more technologies`}
+                        title={expandedTech[index] ? "Collapse tech stack" : "Click to view all technologies"}
+                      >
+                        {expandedTech[index] ? "− less" : `+${project.tech.length - 4}`}
+                      </button>
                     )}
                   </div>
                   
