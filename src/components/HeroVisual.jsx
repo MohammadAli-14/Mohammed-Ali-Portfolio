@@ -1,9 +1,8 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 
 const HeroVisual = () => {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -231,8 +230,6 @@ const HeroVisual = () => {
     <div
       ref={containerRef}
       className="relative w-full h-[400px] sm:h-[480px] lg:h-[540px] flex items-center justify-center select-none touch-none"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       {/* High-DPI Crisp 60/120FPS Canvas */}
       <canvas
@@ -240,35 +237,6 @@ const HeroVisual = () => {
         className="w-full h-full cursor-grab active:cursor-grabbing"
       />
 
-      {/* Floating Glass Chips - Clean & Minimalist Monochrome Design */}
-      <div
-        className="absolute top-4 sm:top-8 left-2 sm:left-6 px-3.5 sm:px-4 py-2.5 rounded-xl sm:rounded-2xl border border-white/10 bg-[#09090b]/85 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex items-center gap-3 transition-transform duration-500 hover:scale-105 pointer-events-auto"
-        style={{
-          transform: isHovered ? "translateY(-4px)" : "translateY(0)",
-        }}
-      >
-        <span className="flex h-2 w-2 relative">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-        </span>
-        <div className="flex flex-col">
-          <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-400 font-mono">Model Stack</span>
-          <span className="text-xs sm:text-sm font-semibold text-white">PyTorch • YOLO • LLMs</span>
-        </div>
-      </div>
-
-      <div
-        className="absolute bottom-6 sm:bottom-10 right-2 sm:right-6 px-3.5 sm:px-4 py-2.5 rounded-xl sm:rounded-2xl border border-white/10 bg-[#09090b]/85 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex items-center gap-3 transition-transform duration-500 hover:scale-105 pointer-events-auto"
-        style={{
-          transform: isHovered ? "translateY(4px)" : "translateY(0)",
-        }}
-      >
-        <span className="text-white text-sm">✦</span>
-        <div className="flex flex-col">
-          <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-400 font-mono">Performance</span>
-          <span className="text-xs sm:text-sm font-semibold text-white">60 FPS Hardware Rendered</span>
-        </div>
-      </div>
     </div>
   );
 };
