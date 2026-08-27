@@ -8,36 +8,52 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PROJECTS = [
   {
+    title: '🌙 Hidayah AI: Multimodal Islamic Research Assistant',
+    desc: 'An AI-powered research assistant utilizing Google Gemini 2.5 Flash for reasoning, FAISS RAG over Tafsir/Fiqh sources, Tavily real-time web retrieval, and trilingual audio recitation.',
+    ss: '/hidayah-ai.png',
+    tech: ['Gemini 2.5 Flash', 'FAISS RAG', 'Python', 'Streamlit', 'Tavily API', 'Multimodal'],
+    live: 'https://hidayah-ai.streamlit.app',
+    code: 'https://github.com/MohammadAli-14/Hidayah-AI'
+  },
+  {
+    title: '🌿 GreenSnap AI: Waste Detection & Classification',
+    desc: 'Cross-platform AI vision application featuring YOLOv11 (99.5% accuracy) and MobileNetV3 served via FastAPI with sub-200ms inference and GPS admin telemetry.',
+    ss: '/greensnap.png',
+    tech: ['YOLOv11', 'MobileNetV3', 'FastAPI', 'React Native Expo', 'PyTorch', 'GPS Reporting'],
+    live: 'https://web-admin-greensnap.vercel.app/',
+    code: 'https://github.com/Muhammad5Ali/web-admin-greensnap'
+  },
+  {
+    title: '🛡️ Email Spam Classifier V2: Ensemble ML',
+    desc: 'Production-ready text classification system with Ensemble ML (97.12% accuracy over 135 features), interactive Streamlit UI, and high-throughput FastAPI microservice.',
+    ss: '/email-spam-classifier.png',
+    tech: ['Ensemble ML', 'XGBoost', 'Scikit-Learn', 'FastAPI', 'Streamlit', 'NLP'],
+    live: 'https://email-spam-classification-version2.streamlit.app',
+    code: 'https://github.com/MohammadAli-14/Email-Spam-Classification-V2'
+  },
+  {
     title: '🚀 Talent Quotient Platform',
-    desc: 'The premier platform for collaborative coding interviews. Experience seamless pair programming, real-time collaborations.',
+    desc: 'The premier platform for collaborative technical interviews featuring Stream.io live video, real-time WebSocket pair programming, and multi-language code execution.',
     ss: '/talent-quotient.png',
-    tech: ['React.js', 'JavaScript', 'Tailwind', 'MongoDB', 'Node.js'],
+    tech: ['React.js', 'Stream.io', 'WebSocket', 'Node.js', 'Clerk Auth', 'MongoDB'],
     live: 'https://talent-quotient-frontend.vercel.app/',
     code: 'https://github.com/MohammadAli-14/Talent-Quotient-V-2'
   },
   {
-    title: '💬 Real-time Chat Application',
-    desc: 'Scalable chat application with real-time messaging, user authentication, and Redis caching for optimal performance.',
+    title: '💬 Real-time Distributed Chat Application',
+    desc: 'Scalable real-time messaging architecture with WebSockets, Redis pub/sub caching, user authentication, and responsive full-stack interface.',
     ss: '/thug-slayers.png',
     tech: ['Redis', 'Socket.io', 'React.js', 'Express', 'Tailwind', 'Node.js'],
     live: 'https://thug-slayers-chat-app-frontend.vercel.app/',
     code: 'https://github.com/MohammadAli-14/ts-redis-chat-app'
   },
   {
-    title: '📝 NoteBook App',
-    desc: 'Modern note-taking application with rich text editing, organization features, and cloud synchronization.',
+    title: '📝 Cloud NoteBoard Application',
+    desc: 'Modern note-taking web application with rich text editing, state persistence, and cloud synchronization.',
     ss: '/noteboard.png',
-    tech: ['React', 'Node.js', 'MongoDB', 'Express', 'DaisyUi'],
+    tech: ['React', 'Node.js', 'MongoDB', 'Express', 'DaisyUI', 'REST APIs'],
     live: 'https://note-book-app-frontend.vercel.app/',
     code: 'https://github.com/MohammadAli-14/Note-Book-App'
-  },
-  {
-    title: '🌿 GreenSnap Admin Dashboard',
-    desc: 'Admin dashboard for waste reports tracking, worker and supervisor management',
-    ss: '/greensnap.png',
-    tech: ['React', 'MobileNet v3 Large', 'YOLO v11', 'Node.js', 'Express'],
-    live: 'https://web-admin-greensnap.vercel.app/',
-    code: 'https://github.com/Muhammad5Ali/web-admin-greensnap'
   }
 ];
 
