@@ -32,6 +32,22 @@ const PROJECTS = [
     code: 'https://github.com/MohammadAli-14/Email-Spam-Classification-V2'
   },
   {
+    title: '✍️ MNIST Digit Recognition (Deep CNN)',
+    desc: 'Interactive computer vision web app powered by a custom Deep Convolutional Neural Network (CNN) in TensorFlow with 99%+ accuracy and real-time interactive canvas drawing.',
+    ss: '/mnist-digit-recognition.png',
+    tech: ['TensorFlow', 'CNN', 'Computer Vision', 'Python', 'Streamlit', 'Deep Learning'],
+    live: 'https://mnist-digit-recognition-final-version.streamlit.app',
+    code: 'https://github.com/MohammadAli-14/Mnist-Digit-Recognition'
+  },
+  {
+    title: '🌸 Iris Species Classifier & REST API',
+    desc: 'Production-ready ML classification web app & REST API built with Python, Flask, Scikit-Learn (SVM), Docker containerization, and 96.7% accuracy with real-time parameter tuning.',
+    ss: '/iris-classification.png',
+    tech: ['Python', 'Flask', 'Scikit-Learn (SVM)', 'Docker', 'REST API', 'Machine Learning'],
+    live: 'https://iris-flower-classification-p1q3.onrender.com',
+    code: 'https://github.com/MohammadAli-14/Iris-Flower-Classification'
+  },
+  {
     title: '🚀 Talent Quotient Platform',
     desc: 'The premier platform for collaborative technical interviews featuring Stream.io live video, real-time WebSocket pair programming, and multi-language code execution.',
     ss: '/talent-quotient.png',
