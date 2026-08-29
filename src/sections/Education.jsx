@@ -9,13 +9,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const educationData = [
   {
-    degree: "BSc in Computer Science",
-    institution: "Federal Urdu University of Arts, Science and Technology, Islamabad",
+    degree: "BS in Computer Science",
+    institution: "International Islamic University, H-10 Islamabad",
     duration: "2021 – 2025",
-    grade: "CGPA: 3.66",
+    grade: "CGPA: 3.66 / 4.0",
     details: [
-      "Specialized in Artificial Intelligence and Machine Learning coursework.",
-      "Final Year Project: Intelligent Visual & Multimodal Automation System.",
+      "Specialized in Artificial Intelligence, Machine Learning, and Computer Vision coursework.",
+      "Final Year Project: GreenSnap AI — Intelligent waste classification using YOLOv11 and MobileNetV3 Large.",
       "Core focus on deep learning, algorithms, computer vision, and distributed systems."
     ]
   },

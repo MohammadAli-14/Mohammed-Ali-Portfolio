@@ -260,8 +260,8 @@ const Contact = () => {
                         <p>{"{"}</p>
                         <p className="pl-4"><span className="text-zinc-400">"name"</span>: <span className="text-white font-medium">"Mohammed Ali"</span>,</p>
                         <p className="pl-4"><span className="text-zinc-400">"role"</span>: <span className="text-white font-medium">"Junior AI Application Engineer"</span>,</p>
-                        <p className="pl-4"><span className="text-zinc-400">"degree"</span>: <span className="text-white font-medium">"BSc Computer Science (CGPA 3.66)"</span>,</p>
-                        <p className="pl-4"><span className="text-zinc-400">"certifications"</span>: [<span className="text-zinc-200">"Microsoft Azure AI-900"</span>, <span className="text-zinc-200">"DeepLearning.AI GenAI"</span>],</p>
+                        <p className="pl-4"><span className="text-zinc-400">"degree"</span>: <span className="text-white font-medium">"BS Computer Science — CGPA 3.66/4.0 (IIUI)"</span>,</p>
+                        <p className="pl-4"><span className="text-zinc-400">"certifications"</span>: [<span className="text-zinc-200">"Azure DevOps Expert (AZ-400)"</span>, <span className="text-zinc-200">"Azure Admin (AZ-104)"</span>, <span className="text-zinc-200">"GenAI Developer"</span>],</p>
                         <p className="pl-4"><span className="text-zinc-400">"interests"</span>: [<span className="text-zinc-200">"Computer Vision"</span>, <span className="text-zinc-200">"LLMs"</span>, <span className="text-zinc-200">"Full-Stack Web"</span>]</p>
                         <p>{"}"}</p>
                       </div>

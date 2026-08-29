@@ -154,7 +154,7 @@ const About = () => {
                   </div>
                   <div>
                     <p className="text-zinc-300 leading-relaxed font-light">
-                      Holder of a BSc in Computer Science with a focus on Artificial Intelligence and Machine Learning. Currently expanding expertise in generative AI and computer vision applications.
+                      Graduate with a BS in Computer Science (CGPA 3.66/4.0) from International Islamic University, Islamabad, specializing in Artificial Intelligence, Machine Learning, and Computer Vision.
                     </p>
                   </div>
                 </div>
