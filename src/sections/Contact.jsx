@@ -223,22 +223,20 @@ const Contact = () => {
                   <button
                     type="button"
                     onClick={() => setActiveTab("terminal")}
-                    className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
-                      activeTab === "terminal"
+                    className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${activeTab === "terminal"
                         ? "bg-white text-black font-semibold shadow-sm"
                         : "text-zinc-400 hover:text-white"
-                    }`}
+                      }`}
                   >
                     👨‍💻 Dev Terminal
                   </button>
                   <button
                     type="button"
                     onClick={() => setActiveTab("direct")}
-                    className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
-                      activeTab === "direct"
+                    className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${activeTab === "direct"
                         ? "bg-white text-black font-semibold shadow-sm"
                         : "text-zinc-400 hover:text-white"
-                    }`}
+                      }`}
                   >
                     📬 Direct Channels
                   </button>
@@ -260,7 +258,7 @@ const Contact = () => {
                         <p>{"{"}</p>
                         <p className="pl-4"><span className="text-zinc-400">"name"</span>: <span className="text-white font-medium">"Mohammed Ali"</span>,</p>
                         <p className="pl-4"><span className="text-zinc-400">"role"</span>: <span className="text-white font-medium">"Junior AI Application Engineer"</span>,</p>
-                        <p className="pl-4"><span className="text-zinc-400">"degree"</span>: <span className="text-white font-medium">"BS Computer Science — CGPA 3.66/4.0 (IIUI)"</span>,</p>
+                        <p className="pl-4"><span className="text-zinc-400">"degree"</span>: <span className="text-white font-medium">"BS Computer Science - CGPA 3.66/4.0 (IIUI)"</span>,</p>
                         <p className="pl-4"><span className="text-zinc-400">"certifications"</span>: [<span className="text-zinc-200">"Azure DevOps Expert (AZ-400)"</span>, <span className="text-zinc-200">"Azure Admin (AZ-104)"</span>, <span className="text-zinc-200">"GenAI Developer"</span>],</p>
                         <p className="pl-4"><span className="text-zinc-400">"interests"</span>: [<span className="text-zinc-200">"Computer Vision"</span>, <span className="text-zinc-200">"LLMs"</span>, <span className="text-zinc-200">"Full-Stack Web"</span>]</p>
                         <p>{"}"}</p>

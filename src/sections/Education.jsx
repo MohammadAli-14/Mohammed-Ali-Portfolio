@@ -15,7 +15,7 @@ const educationData = [
     grade: "CGPA: 3.66 / 4.0",
     details: [
       "Specialized in Artificial Intelligence, Machine Learning, and Computer Vision coursework.",
-      "Final Year Project: GreenSnap AI — Intelligent waste classification using YOLOv11 and MobileNetV3 Large.",
+      "Final Year Project: GreenSnap AI - Intelligent waste classification using YOLOv11 and MobileNetV3 Large.",
       "Core focus on deep learning, algorithms, computer vision, and distributed systems."
     ]
   },
@@ -78,7 +78,7 @@ const Education = () => {
           title="🎓 Education & Skills"
           sub="My academic journey and technical expertise"
         />
-        
+
         {/* Main Container */}
         <div className="mt-16 flex flex-col lg:flex-row gap-8">
           {/* Education Timeline - Left Column */}
@@ -92,7 +92,7 @@ const Education = () => {
                   {/* Timeline indicator */}
                   <div className="absolute left-5 sm:left-6 top-7 w-3 h-3 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
                   <div className="absolute left-[25px] sm:left-[29px] top-7 bottom-7 w-0.5 bg-gradient-to-b from-white/40 to-transparent" />
-                  
+
                   <div className="space-y-4">
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                       <div>
@@ -109,13 +109,13 @@ const Education = () => {
                         </span>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-3">
                       <div className="px-3 py-1 bg-zinc-900/80 border border-zinc-800 text-zinc-300 rounded-lg text-xs font-mono font-medium">
                         {edu.grade}
                       </div>
                     </div>
-                    
+
                     <ul className="space-y-2 pt-2">
                       {edu.details.map((detail, idx) => (
                         <li key={idx} className="text-zinc-400 text-sm flex items-start">
@@ -129,7 +129,7 @@ const Education = () => {
               ))}
             </div>
           </div>
-          
+
           {/* Skills Section - Right Column */}
           <div className="lg:w-1/3">
             <div className="skills-container bg-[#09090b]/80 border border-white/10 rounded-2xl p-6 sm:p-7 h-full sticky top-24 backdrop-blur-sm">
@@ -137,7 +137,7 @@ const Education = () => {
                 <span>⚙️</span>
                 <span>Technical Skills</span>
               </h3>
-              
+
               <div className="space-y-8">
                 {/* Programming Languages */}
                 <div>
@@ -155,7 +155,7 @@ const Education = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 {/* AI/ML Frameworks */}
                 <div>
                   <h4 className="text-white font-medium mb-3 text-base">
@@ -172,7 +172,7 @@ const Education = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 {/* Web Development */}
                 <div>
                   <h4 className="text-white font-medium mb-3 text-base">
@@ -189,7 +189,7 @@ const Education = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 {/* Tools & DevOps */}
                 <div>
                   <h4 className="text-white font-medium mb-3 text-base">
