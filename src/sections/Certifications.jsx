@@ -4,6 +4,53 @@ import CertificateModal from "../components/CertificateModal";
 import LoaderModal from "../components/LoaderModal";
 import { certifications } from "../constants/index.js";
 
+const OrgLogo = ({ organization, title }) => {
+  const org = (organization || "").toLowerCase();
+  const certTitle = (title || "").toLowerCase();
+
+  // Microsoft Official 4-Color Grid Logo
+  if (org.includes("microsoft") || certTitle.includes("azure") || certTitle.includes("microsoft")) {
+    return (
+      <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft Logo">
+        <rect x="1" y="1" width="10" height="10" fill="#f25022" rx="1.5" />
+        <rect x="12" y="1" width="10" height="10" fill="#7fba00" rx="1.5" />
+        <rect x="1" y="12" width="10" height="10" fill="#00a4ef" rx="1.5" />
+        <rect x="12" y="12" width="10" height="10" fill="#ffb900" rx="1.5" />
+      </svg>
+    );
+  }
+
+  // DeepLearning.AI Official Red Geometric Mark
+  if (org.includes("deeplearning") || certTitle.includes("ai for everyone") || certTitle.includes("generative ai for everyone")) {
+    return (
+      <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="DeepLearning.AI Logo">
+        <path d="M12 2L3 7.5L12 13L21 7.5L12 2Z" fill="#FF3E3E" opacity="0.9" />
+        <path d="M3 12L12 17.5L21 12" stroke="#FF3E3E" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M3 16.5L12 22L21 16.5" stroke="#FF3E3E" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+
+  // IBM Logo
+  if (org.includes("ibm")) {
+    return (
+      <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="IBM Logo">
+        <rect x="2" y="5" width="20" height="2" fill="#052FAD" rx="0.5" />
+        <rect x="2" y="9" width="20" height="2" fill="#052FAD" rx="0.5" />
+        <rect x="2" y="13" width="20" height="2" fill="#052FAD" rx="0.5" />
+        <rect x="2" y="17" width="20" height="2" fill="#052FAD" rx="0.5" />
+      </svg>
+    );
+  }
+
+  // UETIANS Foundation & PakAngels Generative AI Achievement Emblem
+  return (
+    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-label="AI Developer Emblem">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
+    </svg>
+  );
+};
+
 const Certifications = () => {
   const [selectedCert, setSelectedCert] = useState(null);
   const [showLoader, setShowLoader] = useState(false);
@@ -91,7 +138,7 @@ const Certifications = () => {
     <section id="certifications" className="flex-center section-padding">
       <div className="w-full h-full md:px-10 px-4 max-w-7xl mx-auto">
         <TitleHeader
-          title="🏆 Certifications"
+          title="Certifications"
           sub="Industry-recognized credentials in AI & Technology"
         />
 
@@ -104,10 +151,10 @@ const Certifications = () => {
                 className="bg-[#09090b]/80 border border-white/10 rounded-2xl p-5 md:p-6 hover:border-white/25 hover:shadow-[0_16px_40px_rgba(0,0,0,0.9)] transition-all duration-300 backdrop-blur-sm"
               >
                 <div className="flex flex-col sm:flex-row items-start gap-4">
-                  {/* Icon */}
+                  {/* Official Organization Logo */}
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center shadow-sm">
-                      <span className="text-zinc-200 text-xl">📜</span>
+                      <OrgLogo organization={cert.organization} title={cert.title} />
                     </div>
                   </div>
 
